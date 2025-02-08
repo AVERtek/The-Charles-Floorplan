@@ -175,7 +175,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     </div> 
  
  <div class="card"> 
-      <model-viewer loading="eager" src="Models/FLOORPLAN FINAL 1.glb?sound=Sound/Inspiring Guitar 59s.mp3" camera-controls 
+      <model-viewer loading="eager" src="Models/THECHARLES_3.glb?sound=Sound/Inspiring Guitar 59s.mp3" camera-controls 
                    camera-orbit="180deg 23deg 75%" autoplay animation-name="" id="interaction" id="reveal" exposure="1" shadow-intensity="1" ar ar-modes="scene-viewer webxr quick-look" ios-src="Models/floorplan_recentered.usdz"
                    alt="Alexan Main Street" auto-rotate-delay="0" ar-scale="auto"
                    slot= "progress-bar" style="z-index: 1; width: 100%; height: 600px; position: static; ">
@@ -187,17 +187,39 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
     
   <div class="card1">
-  <video playsinline width="100%" controls style="z-index: 1; max-width: 100%; height: 600px; position: static;" poster="images/Opening Scene.JPG">
+  <!--<video playsinline width="100%" controls style="z-index: 1; max-width: 100%; height: 600px; position: static;" poster="images/Opening Scene.JPG">
     <source src="Video/Bailey_Final_1.mp4" type="video/mp4">
     Your browser does not support the video tag.
   </video>
 </div>
 
-  </model-viewer>
-     </div>
+  </model-viewer> -->
+      </div>   
+   </model-viewer>
+        </div>
+   
+    <section class="attribution">
+        <div>
+          <span>
+            <h1 style="text-align: center;" markdown="1"><b style="color:#2F2F2E;"><p style="font-family:Source Sans Pro">Press Play</b>
+              <p align="center">
+              <span>
+              <audio controls autoplay loop id="sound">
+                <source src="Sound/Inspiring Guitar 59s.mp3"/>
+              </audio
+            ></span> 
+             </p>
+            </span>
+         </div>
+   </section>
+   <script>    
+        window.addEventListener("load", () => {
+          Sync("#model-viewer", "#sound");
+        });
+      </script>   
   
    <div class="centerImage">   
-   <button onclick="location.href='https://avertek.github.io/Alexan-Main-Street-Bailey/'" type="button" slot="" 
+   <button onclick="location.href='https://avertek.github.io/The-Charles/'" type="button" slot="" 
                     style="z-index: 9; background-color: #b5aa33; border-radius: 8px; border: 1 px solid white; position: static; height: 35px; width: auto;
                           color:#2f2f2e; font-family:Source Sans Pro"><strong>TAKE SCOUT HOME WITH YOU</strong>
       </button> 
@@ -205,7 +227,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
          <br><br>
  
    <div class="centerImage">  
-   <button onclick="location.href='https://avertek.github.io/Alexan-Main-Street-Floorplan/'" type="button" slot="" 
+   <button onclick="location.href='https://avertek.github.io/The-Charles-Floorplan/'" type="button" slot="" 
                     style="z-index: 9; background-color: #b5aa33; border-radius: 8px; border: 1 px solid white; position: static; height: 35px; width: auto;
                           color:#2F2F2E; font-family:Source Sans Pro"><strong>MODEL FLOORPLAN IN 3D</strong>
        </button> 
