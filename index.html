@@ -34,6 +34,11 @@
         .container { max-width: 800px; margin: 0 auto; }
         .card { background-color: #313e49; border: 2px solid #313e49; padding: 10px; margin-bottom: 1em; position: relative; }
         
+        /* HIDE THE NATIVE AR SYMBOL BUTTON */
+        model-viewer::part(default-ar-button) {
+            display: none;
+        }
+
         #ar-error {
             display: none; background-color: #ff595a; color: white;
             padding: 15px; border-radius: 8px; text-align: center;
@@ -90,6 +95,7 @@
                 ar-placement="floor"
                 camera-controls 
                 interaction-prompt="none"
+                loading="eager"
                 exposure="0.65" 
                 shadow-intensity="1"
                 camera-orbit="180deg 23deg 75%">
@@ -139,7 +145,6 @@
         const sound = document.querySelector("#sound");
         const arButton = document.querySelector("#ar-launcher");
 
-        // Unified Play Command
         function start4D() {
             sound.play();
             modelViewer.play();
@@ -154,7 +159,6 @@
             }
         });
 
-        // Sync listeners
         sound.addEventListener("play", () => { modelViewer.play(); });
         sound.addEventListener("pause", () => { modelViewer.pause(); });
 
