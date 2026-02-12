@@ -32,32 +32,34 @@
 
         body { background-color: #313e49; margin: 0; padding: 15px; font-family: 'Factoria Bold', sans-serif; color: white; }
         .container { max-width: 800px; margin: 0 auto; }
-        .card { background-color: #313e49; border: 2px solid #313e49; padding: 10px; margin-bottom: 1em; position: relative; }
+        .card { background-color: #313e49; border: 2px solid #313e49; padding: 15px; margin-bottom: 1em; position: relative; }
         
-        /* Error Banner Style */
         #ar-error {
             display: none; background-color: #ff595a; color: white;
             padding: 15px; border-radius: 8px; text-align: center;
             margin-bottom: 15px; border: 1px solid white; cursor: pointer;
-            animation: fadeIn 0.3s ease;
         }
-        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
 
         .ar-button { 
             background-color: #b5aa33; border-radius: 8px; border: 1px solid white; 
-            height: 45px; width: 90%; max-width: 400px; color: #2F2F2E; 
+            height: 50px; width: 90%; max-width: 400px; color: #2F2F2E; 
             cursor: pointer; font-family: 'Factoria Bold', sans-serif; font-size: 16px;
             display: block; margin: 10px auto;
         }
 
-        model-viewer { width: 100%; height: 600px; background-color: #313e49; }
+        model-viewer { 
+            width: 100%; height: 500px; background-color: #313e49; 
+            --poster-color: transparent;
+        }
         
         .marginauto { margin: 10px auto; display: block; }
         .centerImage { text-align: center; display: block; }
         a { color: #cea155; text-decoration: none; }
-        h1, h2, h3, h4 { text-align: center; margin: 10px 0; }
+        h1, h2, h3 { text-align: center; margin: 10px 0; font-family: 'Factoria Bold', sans-serif; }
         
         audio { width: 100%; max-width: 400px; margin: 10px auto; display: block; }
+
+        .play-bar-label { color: #b5aa33; font-size: 20px; margin-bottom: 5px; }
     </style>
 </head>
 
@@ -68,13 +70,12 @@
         <div class="card">
             <img class="marginauto" src="images/The-Charles-Logo.png" alt="Logo" style="max-width: 300px"> 
             <h2 style="color:#cea155;">REDMOND LIFE FROM A NEW PERSPECTIVE</h2>
-            <h2 style="color:#cea155;">Studio, 1, 2, 3 Bedrooms & Town Home Options</h2>
+            <h2 style="color:#cea155;">Studio, 1, 2, 3 Bedrooms & Town Homes</h2>
             <h1 style="color:#b5aa33;">NOW LEASING!</h1>
         </div>
 
         <div id="ar-error" onclick="this.style.display='none'">
             ⚠️ AR is not supported on this device. <br>
-            Please open this page on a mobile phone to walk the floorplan. <br>
             <small>(Click to dismiss)</small>
         </div>
 
@@ -92,13 +93,13 @@
                 ar-placement="floor"
                 camera-controls 
                 interaction-prompt="none"
-                exposure="0.65" 
+                exposure="0.7" 
                 shadow-intensity="1"
                 camera-orbit="180deg 23deg 75%">
             </model-viewer>
 
-            <div class="card" style="margin-top: 15px;">
-                <h3 style="color:#FFFFFF;">4D Audio Experience</h3>
+            <div class="centerImage" style="margin-top: 20px;">
+                <h2 class="play-bar-label">PLAY BAR</h2>
                 <audio id="sound" controls loop>
                     <source src="Sound/Charles_FP_Audio.mp3" type="audio/mpeg">
                 </audio>
@@ -107,67 +108,68 @@
 
         <div class="centerImage">   
             <button onclick="location.href='https://avertek.github.io/The-Charles-Scout/'" 
-                style="background-color: #b5aa33; border-radius: 8px; border: 1px solid white; height: 35px; color:#2f2f2e; font-family:'Factoria Bold'; padding: 0 15px; cursor: pointer;">
+                style="background-color: #b5aa33; border-radius: 8px; border: 1px solid white; height: 40px; color:#2f2f2e; font-family:'Factoria Bold'; padding: 0 20px; cursor: pointer;">
                 <strong>TAKE SCOUT HOME WITH YOU</strong>
             </button> 
         </div>
 
         <div class="card">
-            <h2><a href="https://thecharlesredmond.com/floor-plans/?utm_source=AVERtek&utm_medium=AR" onclick="getOutboundLink(this.href); return false;"><b style="color:#cea155;">ALL FLOOR PLANS</b></a></h2>
-            <h2><a href="https://thecharlesredmond.com/amenities/?utm_source=AVERtek&utm_medium=AR" onclick="getOutboundLink(this.href); return false;"><b style="color:#cea155;">AMENITIES</b></a></h2>
-            <h2><a href="https://thecharlesredmond.com/gallery/?utm_source=AVERtek&utm_medium=AR" onclick="getOutboundLink(this.href); return false;"><b style="color:#cea155;">GALLERY</b></a></h2>
+            <h2><a href="https://thecharlesredmond.com/floor-plans/?utm_source=AVERtek&utm_medium=AR" onclick="getOutboundLink(this.href); return false;">ALL FLOOR PLANS</a></h2>
+            <h2><a href="https://thecharlesredmond.com/amenities/?utm_source=AVERtek&utm_medium=AR" onclick="getOutboundLink(this.href); return false;">AMENITIES</a></h2>
+            <h2><a href="https://thecharlesredmond.com/gallery/?utm_source=AVERtek&utm_medium=AR" onclick="getOutboundLink(this.href); return false;">GALLERY</a></h2>
             <br>
-            <h2><a href="https://thecharlesredmond.securecafe.com/onlineleasing/the-charles1/guestlogin.aspx/?utm_source=AVERtek&utm_medium=AR" onclick="getOutboundLink(this.href); return false;"><b style="color:#cea155;">APPLY NOW</b></a></h2>
-            <h2><a href="mailto:leasing@thecharlesredmond.com?Subject=Requesting VIP Tour The Charles" onclick="getOutboundLink(this.href); return false;"><b style="color:#cea155;"><ins>EMAIL US</ins></b></a></h2>
-            <h2><a href="tel:8552771273"><b style="color:#cea155;">855-277-1273</b></a></h2>
+            <h2><a href="https://thecharlesredmond.securecafe.com/onlineleasing/the-charles1/guestlogin.aspx/?utm_source=AVERtek&utm_medium=AR" onclick="getOutboundLink(this.href); return false;">APPLY NOW</a></h2>
+            <h2><a href="mailto:leasing@thecharlesredmond.com?Subject=Requesting VIP Tour The Charles" onclick="getOutboundLink(this.href); return false;"><ins>EMAIL US</ins></a></h2>
+            <h2><a href="tel:8552771273">855-277-1273</a></h2>
             <h2 style="color:#b5aa33;">8065 161st Ave NE, Redmond, WA 98052</h2>
         </div>
 
         <div class="card">
-            <h2 style="color:#FFFFFF;">4D Augmented Reality on Mobile Device!</h2>
+            <h2>4D Augmented Reality on Mobile Device!</h2>
             <img class="marginauto" src="images/AR Instructions.png" style="max-width: 100%; height: auto; max-height: 350px;"> 
-            <h2 style="color:#FFFFFF;">Share with Family & Friends!</h2>
-        </div>
-
-        <div class="card">
-            <h4 style="color:#b5aa33;"><em>if AR button does not appear on mobile device, use another browser</em></h4>
-            <h3><a href="https://www.p11.com/contact/" onclick="getOutboundLink(this.href); return false;"><b style="color:#cea155;">Learn More About P11's AR Marketing.</b></a></h3>
+            <h2>Share with Family & Friends!</h2>
         </div>
     </div>
 
     <script>
         const modelViewer = document.querySelector("#floorplan-viewer");
-        const arButton = document.querySelector("#ar-launcher");
-        const arError = document.querySelector("#ar-error");
         const sound = document.querySelector("#sound");
+        const arButton = document.querySelector("#ar-launcher");
 
-        // AR Launcher Logic
+        // Sync Animation and Audio
+        function masterPlay() {
+            sound.play();
+            modelViewer.play();
+        }
+
+        function masterPause() {
+            sound.pause();
+            modelViewer.pause();
+        }
+
+        // 1. Start on AR Launch
         arButton.addEventListener('click', () => {
             if (modelViewer.canActivateAR) {
-                arError.style.display = 'none';
+                masterPlay();
                 modelViewer.activateAR();
             } else {
-                const isShowing = arError.style.display === 'block';
-                arError.style.display = isShowing ? 'none' : 'block';
-                if (!isShowing) window.scrollTo({ top: 0, behavior: 'smooth' });
+                document.querySelector("#ar-error").style.display = 'block';
             }
         });
 
-        // 4D Audio/Animation Sync Logic
+        // 2. Keep in sync if Audio bar is used
+        sound.addEventListener("play", () => { modelViewer.play(); });
+        sound.addEventListener("pause", () => { modelViewer.pause(); });
+        
+        // 3. Re-sync when placed in AR environment
         modelViewer.addEventListener('ar-status', (event) => {
             if (event.detail.status === 'object-placed') {
-                modelViewer.play();
-                sound.play();
+                sound.currentTime = modelViewer.currentTime || 0;
+                masterPlay();
             }
         });
 
-        // Ensure audio stops if user leaves browser
-        document.addEventListener("visibilitychange", () => {
-            if (document.visibilityState !== "visible") {
-                sound.pause();
-            }
-        });
-
+        // Gtag outbound link helper
         var getOutboundLink = function(url) {
             gtag('event', 'click', {
                 'event_category': 'outbound', 'event_label': url, 'transport_type': 'beacon',
