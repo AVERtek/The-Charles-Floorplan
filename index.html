@@ -12,7 +12,6 @@
     j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
     })(window,document,'script','dataLayer','GTM-KBQTG35F');</script>
-
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-Q9GW0D6W67"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
@@ -34,9 +33,11 @@
         .container { max-width: 800px; margin: 0 auto; }
         .card { background-color: #313e49; border: 2px solid #313e49; padding: 10px; margin-bottom: 1em; position: relative; }
         
-        /* HIDE THE NATIVE AR SYMBOL BUTTON */
+        /* THE STUBBORN BUTTON KILLER */
         model-viewer::part(default-ar-button) {
-            display: none;
+            display: none !important;
+            visibility: hidden !important;
+            opacity: 0 !important;
         }
 
         #ar-error {
@@ -47,7 +48,7 @@
 
         .ar-button { 
             background-color: #b5aa33; border-radius: 8px; border: 1px solid white; 
-            height: auto; min-height: 45px; width: 90%; max-width: 400px;
+            min-height: 45px; width: 90%; max-width: 400px;
             color: #2F2F2E; padding: 12px 15px; cursor: pointer; 
             font-weight: bold; font-family: 'Factoria Bold', sans-serif;
             font-size: clamp(14px, 4vw, 18px);
@@ -60,7 +61,6 @@
         .centerImage { text-align: center; display: block; }
         a { color: #cea155; text-decoration: none; }
         h1, h2, h3, h4 { font-family: 'Factoria Bold', sans-serif; text-align: center; }
-        
         audio { width: 100%; max-width: 400px; margin: 10px auto; display: block; }
     </style>
 </head>
@@ -99,6 +99,8 @@
                 exposure="0.65" 
                 shadow-intensity="1"
                 camera-orbit="180deg 23deg 75%">
+                
+                <div slot="ar-button"></div>
             </model-viewer>
 
             <div class="centerImage" style="margin-top: 15px;">
